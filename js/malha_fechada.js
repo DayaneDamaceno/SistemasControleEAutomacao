@@ -62,14 +62,14 @@ function calcular() {
   funcao2 = [];
   entrada = [];
 
-  var numerador1 = document.getElementById("numerador1").value;
 
-  var numerador2 = document.getElementById("numerador2").value;
 
   //myChart.destroy();
   var sinalSelecionado = document.getElementById("select-sinal").value;
 
   if (sinalSelecionado == "primeira") {
+    var numerador1 = document.getElementById("numerador1").value;
+    var numerador2 = document.getElementById("numerador2").value;
     var denominador1 = document.getElementById("denominador1").value;
     var denominador2 = document.getElementById("denominador2").value;
 
@@ -85,7 +85,7 @@ function calcular() {
       entrada.push(1);
     }
   } else if (sinalSelecionado == "segunda") {
-    var numerador1 = document.getElementById("numerador1").value;
+    var numerador1 = document.getElementById("numerador12").value;
     var denominador11 = document.getElementById("denominador11").value;
     var denominador12 = document.getElementById("denominador12").value;
     var denominador13 = document.getElementById("denominador13").value;
@@ -93,7 +93,7 @@ function calcular() {
     var z1 = denominador12 / (numerador1 + 1) / (wn1 * 2);
     var wd1 = wn1 * Math.sqrt(1 - Math.pow(z1, 2));
 
-    var numerador2 = document.getElementById("numerador2").value;
+    var numerador2 = document.getElementById("numerador22").value;
     var denominador21 = document.getElementById("denominador21").value;
     var denominador22 = document.getElementById("denominador22").value;
     var denominador23 = document.getElementById("denominador23").value;
