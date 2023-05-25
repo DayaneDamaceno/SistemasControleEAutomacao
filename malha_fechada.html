@@ -34,7 +34,7 @@
           Calcular
         </button>
       </form>
-      <div class="funcoes">
+      <div id="primeira" class="funcoes">
         <div class="funcao">
           <p>1ª Função</p>
           <input id="numerador1" type="number" />
@@ -45,20 +45,55 @@
           </div>
         </div>
         <button
-          id="btn-comparar"
+          id="btn-comparar-primeira"
           type="button"
           class="btn-comparar"
           onclick="habilitarComparacao()"
         >
           Comparar com outra função
         </button>
-        <div id="funcao-2" class="funcao d-none">
+        <div id="funcao-2-primeira" class="funcao d-none">
           <p>2ª Função</p>
           <input id="numerador2" type="number" />
           <hr />
           <div class="denominador">
             <input id="denominador2" type="number" />
             * S + 1
+          </div>
+        </div>
+      </div>
+
+      <div id="segunda" class="funcoes d-none">
+        <div class="funcao">
+          <p>1ª Função</p>
+          <input id="numerador1" type="number" />
+          <hr />
+          <div class="denominador">
+            <input id="denominador11" type="number" />
+            * S² +
+            <input id="denominador12" type="number" />
+            * S +
+            <input id="denominador13" type="number" />
+          </div>
+        </div>
+        <button
+          id="btn-comparar-segunda"
+          type="button"
+          class="btn-comparar"
+          onclick="habilitarComparacao()"
+        >
+          Comparar com outra função
+        </button>
+        <div id="funcao-2-segunda" class="funcao d-none">
+          <p>2ª Função</p>
+          <input id="numerador2" type="number" />
+          <hr />
+          <div class="denominador">
+            <input id="denominador21" type="number" />
+            * S² +
+            <input id="denominador22" type="number" />
+            * S +
+            <input id="denominador23" type="number" />
           </div>
         </div>
       </div>

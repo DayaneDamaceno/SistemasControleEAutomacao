@@ -5,6 +5,22 @@ var tempoX = [];
 var tempo;
 var myChart;
 
+document
+  .getElementById("select-sinal")
+  .addEventListener("change", function (event) {
+    const selectedOption = event.target.value;
+    var primeira = document.getElementById("primeira");
+    var segunda = document.getElementById("segunda");
+    if (selectedOption == "primeira") {
+      primeira.classList.remove("d-none");
+      segunda.classList.add("d-none");
+    }
+    if (selectedOption == "segunda") {
+      segunda.classList.remove("d-none");
+      primeira.classList.add("d-none");
+    }
+  });
+
 for (var i = 0; i <= 100; i = i + 0.5) {
   tempoX.push(i);
 }
@@ -100,8 +116,18 @@ function calcular() {
 }
 
 function habilitarComparacao() {
-  var btn = document.getElementById("btn-comparar");
-  var funcao = document.getElementById("funcao-2");
-  btn.classList.add("d-none");
-  funcao.classList.remove("d-none");
+  var sinalSelecionado = document.getElementById("select-sinal").value;
+
+  if (sinalSelecionado == "primeira") {
+    var btn = document.getElementById("btn-comparar-primeira");
+    var funcao = document.getElementById("funcao-2-primeira");
+    btn.classList.add("d-none");
+    funcao.classList.remove("d-none");
+  }
+  if (sinalSelecionado == "segunda") {
+    var btn = document.getElementById("btn-comparar-segunda");
+    var funcao = document.getElementById("funcao-2-segunda");
+    btn.classList.add("d-none");
+    funcao.classList.remove("d-none");
+  }
 }
