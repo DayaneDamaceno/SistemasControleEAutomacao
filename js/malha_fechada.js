@@ -21,7 +21,7 @@ document
     }
   });
 
-for (var i = 0; i <= 100; i = i + 0.5) {
+for (var i = 0; i <= 200; i = i + 0.5) {
   tempoX.push(i);
 }
 
@@ -72,8 +72,8 @@ function calcular() {
     var numerador2 = document.getElementById("numerador2").value;
     var denominador1 = document.getElementById("denominador1").value;
     var denominador2 = document.getElementById("denominador2").value;
-
-    for (var i = 0; i <= 100; i = i + 0.5) {
+    
+    for (var i = 0; i <= 200; i = i + 0.5) {
       funcao1.push(
         (numerador1 / (numerador1 + 1)) *
           (1 - 1 / Math.pow(Math.E, i / (denominador1 / (numerador1 + 1))))
@@ -101,9 +101,25 @@ function calcular() {
     var z2 = denominador22 / (numerador2 + 1) / (wn2 * 2);
     var wd2 = wn2 * Math.sqrt(1 - Math.pow(z2, 2));
 
-    for (var i = 0; i <= 100; i = i + 0.5) {
-      funcao1.push(1 - Math.pow(Math.E, -1 * wn1 * i)) * (1 + wn1 * i);
-      funcao2.push(1 - Math.pow(Math.E, -1 * wn2 * i)) * (1 + wn2 * i);
+    for (var i = 0; i <= 200; i = i + 0.5) {
+      
+      funcao1.push(1 - 
+        (1/(Math.sqrt(1 - Math.pow(z1, 2)))) *
+
+        Math.pow(Math.E, -1 * z1 * wn1 * i) *
+        
+        Math.sin((wd1 * i) + Math.atan((wd1/z1)))
+        
+        );
+      
+        funcao2.push(1 - 
+          (1/(Math.sqrt(1 - Math.pow(z2, 2)))) *
+  
+          Math.pow(Math.E, -1 * z2 * wn2 * i) *
+          
+          Math.sin((wd2 * i) + Math.atan((wd2/z2)))
+          
+        );
 
       entrada.push(1);
     }

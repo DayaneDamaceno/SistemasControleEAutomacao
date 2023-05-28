@@ -91,8 +91,24 @@ function calcular() {
     }
   } else if (sinalSelecionado == "Degrau") {
     for (var i = 0; i <= 100; i = i + 0.5) {
-      funcao1.push(1 - Math.pow(Math.E, -1 * wn1 * i)) * (1 + wn1 * i);
-      funcao2.push(1 - Math.pow(Math.E, -1 * wn2 * i)) * (1 + wn2 * i);
+
+      funcao1.push(1 - 
+        (1/(Math.sqrt(1 - Math.pow(z1, 2)))) *
+
+        Math.pow(Math.E, -1 * z1 * wn1 * i) *
+        
+        Math.sin((wd1 * i) + Math.atan((wd1/z1)))
+        
+        );
+      
+        funcao2.push(1 - 
+          (1/(Math.sqrt(1 - Math.pow(z2, 2)))) *
+  
+          Math.pow(Math.E, -1 * z2 * wn2 * i) *
+          
+          Math.sin((wd2 * i) + Math.atan((wd2/z2)))
+          
+        );
 
       entrada.push(1);
     }
