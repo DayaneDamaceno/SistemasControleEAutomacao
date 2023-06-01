@@ -39,6 +39,22 @@ var config = {
   },
 };
 
+function atualizarValor1() {
+
+  setTimeout(function(){
+    document.getElementById("denominador13").value = document.getElementById("numerador1").value;
+  }, 300);
+  
+}
+
+function atualizarValor2() {
+
+  setTimeout(function(){
+    document.getElementById("denominador23").value = document.getElementById("numerador2").value;
+  }, 300);
+
+}
+
 myChart = new Chart(ctx, config);
 
 function calcular() {
@@ -47,15 +63,17 @@ function calcular() {
   entrada = [];
 
   var numerador1 = document.getElementById("numerador1").value;
-  var denominador11 = document.getElementById("denominador11").value;
+  //var denominador11 = document.getElementById("denominador11").value;
   var denominador12 = document.getElementById("denominador12").value;
   var denominador13 = document.getElementById("denominador13").value;
   var wn1 = Math.sqrt(numerador1);
   var z1 = denominador12 / (wn1 * 2);
   var wd1 = wn1 * Math.sqrt(1 - Math.pow(z1, 2));
+  console.log(wn1);
+  console.log(z1);
 
   var numerador2 = document.getElementById("numerador2").value;
-  var denominador21 = document.getElementById("denominador21").value;
+  //var denominador21 = document.getElementById("denominador21").value;
   var denominador22 = document.getElementById("denominador22").value;
   var denominador23 = document.getElementById("denominador23").value;
   var wn2 = Math.sqrt(numerador2);

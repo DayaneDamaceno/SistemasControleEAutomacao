@@ -21,7 +21,7 @@ document
     }
   });
 
-for (var i = 0; i <= 200; i = i + 0.5) {
+for (var i = 0; i <= 90; i = i + 0.5) {
   tempoX.push(i);
 }
 
@@ -57,6 +57,23 @@ var config = {
 
 myChart = new Chart(ctx, config);
 
+function atualizarValor1() {
+
+  setTimeout(function(){
+    document.getElementById("denominador13").value = document.getElementById("numerador12").value;
+  }, 200);
+  
+}
+
+function atualizarValor2() {
+
+  setTimeout(function(){
+    document.getElementById("denominador23").value = document.getElementById("numerador22").value;
+  }, 200);
+
+}
+
+
 function calcular() {
   funcao1 = [];
   funcao2 = [];
@@ -73,7 +90,7 @@ function calcular() {
     var denominador1 = document.getElementById("denominador1").value;
     var denominador2 = document.getElementById("denominador2").value;
     
-    for (var i = 0; i <= 200; i = i + 0.5) {
+    for (var i = 0; i <= 90; i = i + 0.5) {
       funcao1.push(
         (numerador1 / (numerador1 + 1)) *
           (1 - 1 / Math.pow(Math.E, i / (denominador1 / (numerador1 + 1))))
@@ -86,22 +103,22 @@ function calcular() {
     }
   } else if (sinalSelecionado == "segunda") {
     var numerador1 = document.getElementById("numerador12").value;
-    var denominador11 = document.getElementById("denominador11").value;
+    //var denominador11 = document.getElementById("denominador11").value;
     var denominador12 = document.getElementById("denominador12").value;
     var denominador13 = document.getElementById("denominador13").value;
-    var wn1 = Math.sqrt(numerador1 / (numerador1 + 1));
-    var z1 = denominador12 / (numerador1 + 1) / (wn1 * 2);
+    var wn1 = Math.sqrt(numerador1);
+    var z1 = (denominador12 * 2) / (wn1 * 2);
     var wd1 = wn1 * Math.sqrt(1 - Math.pow(z1, 2));
 
     var numerador2 = document.getElementById("numerador22").value;
-    var denominador21 = document.getElementById("denominador21").value;
+    //var denominador21 = document.getElementById("denominador21").value;
     var denominador22 = document.getElementById("denominador22").value;
     var denominador23 = document.getElementById("denominador23").value;
-    var wn2 = Math.sqrt(numerador2 / (numerador2 + 1));
-    var z2 = denominador22 / (numerador2 + 1) / (wn2 * 2);
+    var wn2 = Math.sqrt(numerador2);
+    var z2 = (denominador22 * 2) / (wn2 * 2);
     var wd2 = wn2 * Math.sqrt(1 - Math.pow(z2, 2));
 
-    for (var i = 0; i <= 200; i = i + 0.5) {
+    for (var i = 0; i <= 90; i = i + 0.5) {
       
       funcao1.push(1 - 
         (1/(Math.sqrt(1 - Math.pow(z1, 2)))) *
@@ -112,7 +129,7 @@ function calcular() {
         
         );
       
-        funcao2.push(1 - 
+      funcao2.push(1 - 
           (1/(Math.sqrt(1 - Math.pow(z2, 2)))) *
   
           Math.pow(Math.E, -1 * z2 * wn2 * i) *

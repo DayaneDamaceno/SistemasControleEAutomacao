@@ -38,14 +38,14 @@
       <div class="funcoes">
         <div class="funcao">
           <p>1ª Função</p>
-          <input id="numerador1" type="number" />
+          <input id="numerador1" type="number" onkeydown="atualizarValor1()"/>
           <hr />
           <div class="denominador">
-            <input id="denominador11" type="number" />
-            * S² +
+            <!-- <input id="denominador11" type="number" /> -->
+            S² +
             <input id="denominador12" type="number" />
             * S +
-            <input id="denominador13" type="number" />
+            <input id="denominador13" type="number" disabled="true"/>
           </div>
         </div>
         <button
@@ -58,14 +58,14 @@
         </button>
         <div id="funcao-2" class="funcao d-none">
           <p>2ª Função</p>
-          <input id="numerador2" type="number" />
+          <input id="numerador2" type="number" onkeydown="atualizarValor2()"/>
           <hr />
           <div class="denominador">
-            <input id="denominador21" type="number" />
-            * S² +
+            <!-- <input id="denominador21" type="number" /> -->
+            S² +
             <input id="denominador22" type="number" />
             * S +
-            <input id="denominador23" type="number" />
+            <input id="denominador23" type="number" disabled="true"/>
           </div>
         </div>
       </div>
